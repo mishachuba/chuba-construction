@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X, Phone, MessageSquare } from "lucide-react";
@@ -16,6 +16,22 @@ export function Header() {
   };
 
   const closeMenu = () => setMenuOpen(false);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMenuOpen(false);
+    };
+
+    document.body.style.overflow = "hidden";
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.body.style.overflow = "";
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [menuOpen]);
 
   return (
     <header className="sticky top-0 z-50 border-b border-warm-200 bg-white shadow-sm">
@@ -67,7 +83,7 @@ export function Header() {
             </Button>
           </div>
 
-          {/* Hamburger menu — all screen sizes */}
+          {/* Hamburger — mobile and desktop */}
           <button
             type="button"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -85,28 +101,53 @@ export function Header() {
         </div>
       </div>
 
-      {/* Hamburger dropdown */}
+      {/* Backdrop */}
       {menuOpen && (
-        <nav
-          id="site-nav-menu"
-          className="border-t border-warm-200 bg-white"
-          aria-label="Site navigation"
-        >
-          <ul className="mx-auto max-w-7xl px-4 py-2 sm:px-6 lg:px-8">
-            {siteConfig.navigation.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  onClick={closeMenu}
-                  className="block rounded-lg px-3 py-3 text-sm font-medium text-brand-navy hover:bg-warm-100 md:py-2.5"
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <button
+          type="button"
+          className="fixed inset-0 z-40 bg-brand-navy/40"
+          aria-label="Close menu"
+          onClick={closeMenu}
+        />
       )}
+
+      {/* Slide-out panel from the right */}
+      <nav
+        id="site-nav-menu"
+        aria-label="Site navigation"
+        aria-hidden={!menuOpen}
+        className={`fixed top-0 right-0 z-50 flex h-full w-full max-w-sm flex-col border-l border-warm-200 bg-white shadow-xl transition-transform duration-300 ease-in-out ${
+          menuOpen ? "translate-x-0" : "translate-x-full pointer-events-none"
+        }`}
+      >
+        <div className="flex items-center justify-between border-b border-warm-200 px-4 py-4">
+          <span className="text-sm font-semibold uppercase tracking-wide text-brand-navy">
+            Menu
+          </span>
+          <button
+            type="button"
+            onClick={closeMenu}
+            className="rounded-lg p-2 text-brand-navy hover:bg-warm-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-teal focus-visible:ring-offset-2"
+            aria-label="Close menu"
+          >
+            <X className="h-6 w-6" aria-hidden="true" />
+          </button>
+        </div>
+
+        <ul className="flex-1 overflow-y-auto px-2 py-3">
+          {siteConfig.navigation.map((item) => (
+            <li key={item.href}>
+              <Link
+                href={item.href}
+                onClick={closeMenu}
+                className="block rounded-lg px-4 py-3 text-base font-medium text-brand-navy hover:bg-warm-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-teal"
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </header>
   );
 }
