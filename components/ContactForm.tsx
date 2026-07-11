@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import { Phone, Mail, MapPin, Loader2, CheckCircle, AlertCircle } from "lucide-react";
+import { CallTextLink } from "@/components/CallLink";
 import { siteConfig } from "@/content/site";
 import { SectionHeading } from "@/components/ui";
 
@@ -130,12 +131,9 @@ export function ContactForm() {
               <Phone className="mt-0.5 h-5 w-5 shrink-0 text-brand-teal-dark" aria-hidden="true" />
               <div>
                 <p className="font-semibold text-brand-navy">Phone</p>
-                <a
-                  href={`tel:${siteConfig.phone}`}
-                  className="text-warm-700 underline-offset-4 hover:text-brand-navy hover:underline"
-                >
+                <CallTextLink className="text-warm-700 underline-offset-4 hover:text-brand-navy hover:underline">
                   {siteConfig.phoneDisplay}
-                </a>
+                </CallTextLink>
               </div>
             </div>
             <div className="flex items-start gap-3">

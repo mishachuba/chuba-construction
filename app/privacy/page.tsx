@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { CallTextLink } from "@/components/CallLink";
 import { siteConfig } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -179,12 +180,7 @@ export default function PrivacyPage() {
               {siteConfig.email}
             </a>{" "}
             or call{" "}
-            <a
-              href={`tel:${siteConfig.phone}`}
-              className="text-brand-blue underline-offset-4 hover:underline"
-            >
-              {siteConfig.phoneDisplay}
-            </a>
+            <CallTextLink className="text-brand-blue underline-offset-4 hover:underline" />
             . We will verify your request and respond within the timeframe
             required by law.
           </p>
@@ -226,12 +222,7 @@ export default function PrivacyPage() {
             </li>
             <li>
               Phone:{" "}
-              <a
-                href={`tel:${siteConfig.phone}`}
-                className="text-brand-blue underline-offset-4 hover:underline"
-              >
-                {siteConfig.phoneDisplay}
-              </a>
+              <CallTextLink className="text-brand-blue underline-offset-4 hover:underline" />
             </li>
             <li>
               Location: {siteConfig.address.city}, {siteConfig.address.state}

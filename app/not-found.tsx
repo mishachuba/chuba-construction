@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { siteConfig } from "@/content/site";
+import { CallTextLink } from "@/components/CallLink";
 
 export default function NotFound() {
   return (
@@ -16,12 +16,7 @@ export default function NotFound() {
       </Link>
       <p className="mt-6 text-sm text-warm-700">
         Need help? Call{" "}
-        <a
-          href={`tel:${siteConfig.phone}`}
-          className="font-medium text-brand-navy underline-offset-4 hover:underline"
-        >
-          {siteConfig.phoneDisplay}
-        </a>
+        <CallTextLink className="font-medium text-brand-navy underline-offset-4 hover:underline" />
       </p>
     </main>
   );

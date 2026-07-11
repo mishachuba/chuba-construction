@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { siteConfig } from "@/content/site";
 import { Button } from "@/components/ui";
+import { CallLink } from "@/components/CallLink";
 
 export function Hero() {
   return (
@@ -35,13 +36,12 @@ export function Hero() {
           <Button href="#contact" variant="primary" className="min-w-[160px] px-6 py-3 text-base">
             Get a Free Quote
           </Button>
-          <Button
-            href={`tel:${siteConfig.phone}`}
+          <CallLink
             variant="outline"
             className="min-w-[160px] border-white px-6 py-3 text-base text-white hover:bg-white hover:text-brand-navy"
           >
             Call {siteConfig.phoneDisplay}
-          </Button>
+          </CallLink>
         </div>
       </div>
     </section>

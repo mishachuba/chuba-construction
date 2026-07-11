@@ -1,6 +1,9 @@
-import { Phone, MessageSquare } from "lucide-react";
+"use client";
+
+import { MessageSquare } from "lucide-react";
 import { siteConfig } from "@/content/site";
 import { Button } from "@/components/ui";
+import { CallLink } from "@/components/CallLink";
 
 export function MobileBottomBar() {
   return (
@@ -10,15 +13,9 @@ export function MobileBottomBar() {
       aria-label="Quick contact actions"
     >
       <div className="mx-auto flex max-w-md gap-3">
-        <Button
-          href={`tel:${siteConfig.phone}`}
-          variant="primary"
-          className="flex-1"
-          ariaLabel={`Call ${siteConfig.phoneDisplay}`}
-        >
-          <Phone className="mr-1.5 h-4 w-4" aria-hidden="true" />
+        <CallLink variant="primary" className="flex-1" showIcon>
           Call
-        </Button>
+        </CallLink>
         <Button
           href={`sms:${siteConfig.phone}`}
           variant="primary"

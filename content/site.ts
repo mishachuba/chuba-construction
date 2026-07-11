@@ -4,6 +4,7 @@ export const siteConfig = {
   url: "https://chubaconstruction.com",
   phone: "9253221106",
   phoneDisplay: "925-322-1106",
+  phoneE164: "+19253221106",
   email: "chubaconstruction@gmail.com",
   licenseNumber: "993336",
   licenseDisplay: "CA License #993336",

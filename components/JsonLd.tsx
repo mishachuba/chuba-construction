@@ -6,7 +6,7 @@ export function JsonLd() {
     "@type": "GeneralContractor",
     name: siteConfig.name,
     url: siteConfig.url,
-    telephone: `+1-${siteConfig.phoneDisplay}`,
+    telephone: siteConfig.phoneE164,
     email: siteConfig.email,
     image: `${siteConfig.url}/Header_Logo.png`,
     address: {

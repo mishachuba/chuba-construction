@@ -3,9 +3,10 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { siteConfig } from "@/content/site";
 import { Button } from "@/components/ui";
+import { CallLink } from "@/components/CallLink";
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -55,14 +56,9 @@ export function Header() {
         <div className="flex items-center gap-2 sm:gap-3">
           {/* Desktop: Call, Quote */}
           <div className="hidden items-center gap-3 md:flex">
-            <Button
-              href={`tel:${siteConfig.phone}`}
-              variant="secondary"
-              ariaLabel={`Call ${siteConfig.phoneDisplay}`}
-            >
-              <Phone className="mr-1.5 h-4 w-4" aria-hidden="true" />
+            <CallLink variant="secondary" showIcon>
               Call
-            </Button>
+            </CallLink>
             <Button href="#contact" variant="primary">
               Quote
             </Button>
