@@ -73,32 +73,6 @@ export function ROFeature() {
               </div>
             </div>
 
-            <div>
-              <h3 className="mb-3 text-xl font-bold text-brand-navy">
-                Example Systems
-              </h3>
-              <p className="mb-4 text-sm text-warm-700">
-                We install a wide range of RO systems. Here are two popular
-                options our customers ask about:
-              </p>
-              <ul className="space-y-3">
-                {ro.exampleSystems.map((system) => (
-                  <li
-                    key={system.name}
-                    className="rounded-lg border border-warm-200 p-4"
-                  >
-                    <p className="font-semibold text-brand-navy">
-                      {system.name}{" "}
-                      <span className="font-normal text-warm-700">
-                        ({system.type})
-                      </span>
-                    </p>
-                    <p className="mt-1 text-sm text-warm-700">{system.note}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
             <div className="rounded-xl border-2 border-cta bg-cta-light p-6">
               <h3 className="text-xl font-bold text-brand-navy">
                 {ro.pricing.heading}

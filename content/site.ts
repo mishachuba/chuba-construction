@@ -160,18 +160,6 @@ export const siteConfig = {
           "Standard RO produces neutral-pH water. Alkaline remineralization filters add minerals back for a smoother taste — ask us which option fits your household.",
       },
     ],
-    exampleSystems: [
-      {
-        name: "AquaTru Classic",
-        type: "Countertop",
-        note: "Plug-in countertop unit — no drilling required.",
-      },
-      {
-        name: "Waterdrop G3P600",
-        type: "Tankless undersink",
-        note: "Compact tankless system with fast flow rate.",
-      },
-    ],
     image:
       "https://images.pexels.com/photos/248412/pexels-photo-248412.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80",
     imageAlt:
