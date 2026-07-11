@@ -6,7 +6,6 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { siteConfig } from "@/content/site";
 import { Button } from "@/components/ui";
-import { CallLink } from "@/components/CallLink";
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -54,11 +53,8 @@ export function Header() {
         </button>
 
         <div className="flex items-center gap-2 sm:gap-3">
-          {/* Desktop: Call, Quote */}
-          <div className="hidden items-center gap-3 md:flex">
-            <CallLink variant="secondary" showIcon>
-              Call
-            </CallLink>
+          {/* Desktop: Quote only */}
+          <div className="hidden md:flex">
             <Button href="#contact" variant="primary">
               Quote
             </Button>
