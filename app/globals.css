@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand colors extracted from Header_Logo */
+  --color-brand-navy: #1b3644;
+  --color-brand-blue: #3e5c8a;
+  --color-brand-teal: #8cc3d5;
+  --color-brand-teal-dark: #508090;
+
+  /* Warm neutrals */
+  --color-warm-50: #faf9f7;
+  --color-warm-100: #f5f3f0;
+  --color-warm-200: #e8e4df;
+  --color-warm-300: #d4cfc8;
+  --color-warm-700: #5c5650;
+  --color-warm-800: #3d3833;
+  --color-warm-900: #2a2622;
+
+  /* CTA accent — warm amber for high contrast */
+  --color-cta: #d97706;
+  --color-cta-hover: #b45309;
+  --color-cta-light: #fef3c7;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-warm-50 text-warm-900 antialiased;
+}
+
+/* Focus visible for accessibility */
+:focus-visible {
+  @apply outline-2 outline-offset-2 outline-brand-teal;
+}
+
+/* Offset anchor links for sticky header */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+@media (max-width: 767px) {
+  section[id] {
+    scroll-margin-top: 7rem;
+  }
+
+  /* Space for mobile bottom bar */
+  body {
+    padding-bottom: 4.5rem;
+  }
+}
