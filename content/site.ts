@@ -28,9 +28,9 @@ export const siteConfig = {
     tagline:
       "Licensed, bonded, insured, family-owned, and fairly priced.",
     backgroundImage:
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80",
+      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1920&q=80",
     backgroundAlt:
-      "Construction workers reviewing plans at a residential job site",
+      "Sunlit residential kitchen remodel with warm wood cabinetry and custom finishes",
   },
   about: {
     paragraphs: [
