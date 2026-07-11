@@ -173,9 +173,8 @@ export const siteConfig = {
       },
     ],
     image:
-      "https://images.pexels.com/photos/6692715/pexels-photo-6692715.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80",
-    imageAlt:
-      "Modern kitchen sink with a residential water filtration setup and clean filtered water",
+      "https://images.pexels.com/photos/1304540/pexels-photo-1304540.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80",
+    imageAlt: "Glass of fresh water on a kitchen counter",
     pricing: {
       heading: "East Bay RO Installation Special",
       items: [
