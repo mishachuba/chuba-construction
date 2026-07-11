@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { siteConfig } from "@/content/site";
-import { Button } from "@/components/ui";
 import { CallLink } from "@/components/CallLink";
 
 export function Hero() {
@@ -32,10 +31,7 @@ export function Hero() {
         <p className="mx-auto mt-6 max-w-2xl text-lg text-warm-100 sm:text-xl">
           {siteConfig.hero.tagline}
         </p>
-        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button href="#contact" variant="primary" className="min-w-[160px] px-6 py-3 text-base">
-            Get a Free Quote
-          </Button>
+        <div className="mt-10 flex justify-center">
           <CallLink
             variant="outline"
             className="min-w-[160px] border-white px-6 py-3 text-base text-white hover:bg-white hover:text-brand-navy"

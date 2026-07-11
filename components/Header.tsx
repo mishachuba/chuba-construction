@@ -56,14 +56,14 @@ export function Header() {
           {/* Desktop: Quote only */}
           <div className="hidden md:flex">
             <Button href="#contact" variant="primary">
-              Quote
+              Free Quote
             </Button>
           </div>
 
           {/* Mobile: Quote only (Call/Text in bottom bar) */}
           <div className="md:hidden">
             <Button href="#contact" variant="primary" className="px-3 py-2">
-              Quote
+              Free Quote
             </Button>
           </div>
 
