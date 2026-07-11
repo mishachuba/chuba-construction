@@ -173,7 +173,7 @@ export const siteConfig = {
       },
     ],
     image:
-      "https://images.unsplash.com/photo-1548839140-29a7492991f9?w=1200&q=80",
+      "https://images.pexels.com/photos/4239115/pexels-photo-4239115.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80",
     imageAlt: "Clean drinking water being poured into a glass",
     pricing: {
       heading: "East Bay RO Installation Special",
