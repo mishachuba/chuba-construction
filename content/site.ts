@@ -173,8 +173,9 @@ export const siteConfig = {
       },
     ],
     image:
-      "https://images.pexels.com/photos/1304540/pexels-photo-1304540.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80",
-    imageAlt: "Glass of fresh water on a kitchen counter",
+      "https://images.pexels.com/photos/248412/pexels-photo-248412.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80",
+    imageAlt:
+      "Clear glasses of fresh drinking water on a wooden kitchen counter",
     pricing: {
       heading: "East Bay RO Installation Special",
       items: [
