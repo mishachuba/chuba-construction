@@ -173,8 +173,9 @@ export const siteConfig = {
       },
     ],
     image:
-      "https://images.pexels.com/photos/4239115/pexels-photo-4239115.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80",
-    imageAlt: "Clean drinking water being poured into a glass",
+      "https://images.pexels.com/photos/6692715/pexels-photo-6692715.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80",
+    imageAlt:
+      "Modern kitchen sink with a residential water filtration setup and clean filtered water",
     pricing: {
       heading: "East Bay RO Installation Special",
       items: [
