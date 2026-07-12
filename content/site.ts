@@ -137,7 +137,7 @@ export const siteConfig = {
   reverseOsmosis: {
     heading: "Reverse Osmosis Water Filtration",
     subheading:
-      "Cleaner, better-tasting water for your East Bay home — installed by a licensed contractor.",
+      "Cleaner, better-tasting water for your home",
     benefits: [
       "Removes common contaminants including lead, chlorine, PFAS, and dissolved solids",
       "Saves money compared to bottled water over time",
