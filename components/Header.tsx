@@ -48,7 +48,7 @@ export function Header() {
             width={1024}
             height={382}
             priority
-            className="h-10 w-auto sm:h-12"
+            className="h-12 w-auto sm:h-14"
           />
         </button>
 
