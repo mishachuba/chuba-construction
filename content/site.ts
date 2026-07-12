@@ -142,7 +142,7 @@ export const siteConfig = {
     pricing: {
       heading: "East Bay RO Installation Special",
       items: [
-        { label: "Basic undersink installation", price: "$300" },
+        { label: "Basic undersink unit installation and faucet", price: "$300" },
         {
           label: "Countertop hole drilling (if required)",
           price: "+$150",
