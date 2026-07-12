@@ -111,9 +111,9 @@ export const siteConfig = {
     ],
   },
   reverseOsmosis: {
-    heading: "Reverse Osmosis Filter",
+    heading: "Home Improvement Idea",
     subheading:
-      "Cleaner, better-tasting water for your home",
+      "Install reverse osmosis water filter",
     benefits: [
       "Removes common contaminants including lead, chlorine, PFAS, and dissolved solids",
       "Saves money compared to bottled water over time",
