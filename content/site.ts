@@ -96,16 +96,16 @@ export const siteConfig = {
         alt: "Placeholder — deck construction style reference",
       },
       {
-        title: "Home addition",
-        image:
-          "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80",
-        alt: "Placeholder — home addition style reference",
-      },
-      {
         title: "Landscaping & concrete",
         image:
-          "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
+          "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80",
         alt: "Placeholder — landscaping and concrete style reference",
+      },
+      {
+        title: "Home addition",
+        image:
+          "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
+        alt: "Placeholder — home addition style reference",
       },
     ],
   },
