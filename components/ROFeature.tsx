@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Droplets, CheckCircle } from "lucide-react";
 import { siteConfig } from "@/content/site";
-import { SectionHeading, Button } from "@/components/ui";
+import { SectionHeading } from "@/components/ui";
 
 export function ROFeature() {
   const ro = siteConfig.reverseOsmosis;
@@ -91,9 +91,6 @@ export function ROFeature() {
                 ))}
               </ul>
               <p className="mt-4 text-sm text-warm-700">{ro.pricing.note}</p>
-              <Button href="#contact" variant="primary" className="mt-6 w-full sm:w-auto">
-                Request RO Installation Quote
-              </Button>
             </div>
           </div>
         </div>
