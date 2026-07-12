@@ -15,9 +15,9 @@ export default function HomePage() {
       <Projects />
       <ROFeature />
       <About />
-      <SocialProof />
       <FAQ />
       <ContactForm />
+      <SocialProof />
     </main>
   );
 }
