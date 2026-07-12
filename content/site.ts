@@ -82,7 +82,7 @@ export const siteConfig = {
   ],
   projects: {
     heading: "Recent Projects",
-    subheading: "Sample project styles — photos coming soon",
+    subheading: "Sample project styles",
     items: [
       {
         title: "Kitchen remodel",
