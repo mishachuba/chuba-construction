@@ -14,7 +14,7 @@ export function Services() {
         <SectionHeading
           id="services-heading"
           title="Our Services"
-          subtitle={`Serving ${siteConfig.serviceAreas.slice(0, 4).join(", ")}, and the ${siteConfig.serviceAreas[siteConfig.serviceAreas.length - 1]}`}
+          subtitle={siteConfig.servicesSubtitle}
         />
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {siteConfig.services.map((service) => (
