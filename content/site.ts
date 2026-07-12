@@ -91,12 +91,6 @@ export const siteConfig = {
         alt: "Placeholder — kitchen remodeling style reference",
       },
       {
-        title: "Bathroom renovation",
-        image:
-          "https://images.unsplash.com/photo-1620626011761-996317b8d101?w=800&q=80",
-        alt: "Placeholder — bathroom renovation style reference",
-      },
-      {
         title: "Deck construction",
         image:
           "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
@@ -109,28 +103,10 @@ export const siteConfig = {
         alt: "Placeholder — home addition style reference",
       },
       {
-        title: "Exterior painting",
-        image:
-          "https://images.unsplash.com/photo-1605276374101-dee2a786ed80?w=800&q=80",
-        alt: "Placeholder — exterior painting style reference",
-      },
-      {
         title: "Landscaping & concrete",
         image:
           "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
         alt: "Placeholder — landscaping and concrete style reference",
-      },
-      {
-        title: "ADU build",
-        image:
-          "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80",
-        alt: "Placeholder — accessory dwelling unit style reference",
-      },
-      {
-        title: "Finish carpentry",
-        image:
-          "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
-        alt: "Placeholder — finish carpentry style reference",
       },
     ],
   },
