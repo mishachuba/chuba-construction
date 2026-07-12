@@ -35,8 +35,7 @@ export const siteConfig = {
   },
   about: {
     paragraphs: [
-      "Chuba Construction is a family-owned general contractor proudly serving the East Bay and surrounding areas for 10+ years. What started as a father-and-son team has grown into a trusted local company known for reliable work, clear communication, and fair pricing.",
-      "We treat every project like it's our own home. Licensed, bonded, and fully insured, we're committed to doing the job right the first time.",
+      "Chuba Construction is a family-owned general contractor proudly serving the East Bay and surrounding areas for 10+ years. What started as a father-and-son team has grown into a trusted local company known for reliable work, clear communication, and fair pricing. We treat every project like it's our own home, and we're committed to doing the job right.",
     ],
   },
   services: [
