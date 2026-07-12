@@ -137,10 +137,9 @@ export const siteConfig = {
           "Standard RO produces neutral-pH water. Alkaline remineralization filters add minerals back for a smoother taste — ask us which option fits your household.",
       },
     ],
-    image:
-      "https://images.pexels.com/photos/248412/pexels-photo-248412.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80",
+    image: "/ro-filter-system.png",
     imageAlt:
-      "Clear glasses of fresh drinking water on a wooden kitchen counter",
+      "Tankless reverse osmosis water filtration system with dedicated faucet",
     pricing: {
       heading: "East Bay RO Installation Special",
       items: [
