@@ -194,7 +194,7 @@ export const siteConfig = {
     {
       question: "How soon can you start my project?",
       answer:
-        "Start dates depend on project scope and our current schedule. After we review your project, we will give you a realistic timeline. Smaller jobs are often scheduled within a few weeks; larger remodels may require more lead time.",
+        "Start dates depend on project scope and our current schedule. After we review your project, we will give you a realistic timeline. Smaller jobs are often scheduled within a week; larger remodels may require more lead time.",
     },
   ],
   navigation: [
