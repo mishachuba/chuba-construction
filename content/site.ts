@@ -27,7 +27,7 @@ export const siteConfig = {
   hero: {
     headline: "Repair, remodel, new build – we can do it all.",
     tagline:
-      "Licensed. Bonded. Insured. Lic. #993336",
+      "Licensed. Bonded. Insured. Lic #993336",
     backgroundImage:
       "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1920&q=80",
     backgroundAlt:
