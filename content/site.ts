@@ -114,7 +114,7 @@ export const siteConfig = {
     subheading:
       "Install reverse osmosis water filter",
     benefits: [
-      "Removes common contaminants including lead, chlorine, PFAS, and dissolved solids",
+      "Removes common contaminants including lead, chlorine, PFAS, arsenic, nitrates, microplastics, and dissolved solids",
       "Saves money compared to bottled water over time",
       "Reduces plastic waste from single-use bottles",
       "Improves taste for drinking, cooking, and coffee",
