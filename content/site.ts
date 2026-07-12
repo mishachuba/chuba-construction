@@ -25,7 +25,7 @@ export const siteConfig = {
   ],
   servicesSubtitle: "Serving Walnut Creek & East Bay",
   hero: {
-    headline: "Repair, remodel, new build – we can do it all.",
+    headline: "Repair, remodel, new build, we can do it all.",
     tagline:
       "Licensed. Bonded. Insured. Lic #993336",
     backgroundImage:
