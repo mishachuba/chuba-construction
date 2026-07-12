@@ -111,7 +111,7 @@ export const siteConfig = {
     ],
   },
   reverseOsmosis: {
-    heading: "Reverse Osmosis Water Filtration",
+    heading: "Reverse Osmosis Filter",
     subheading:
       "Cleaner, better-tasting water for your home",
     benefits: [
