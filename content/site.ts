@@ -146,12 +146,38 @@ export const siteConfig = {
         ],
       },
       {
-        title: "Home addition",
+        title: "Custom sauna",
         media: [
           {
             type: "image",
-            src: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
-            alt: "Placeholder — home addition style reference",
+            src: "/projects/custom-sauna/1.png",
+            alt: "Custom sauna — exterior with wood door and sliding window",
+          },
+          {
+            type: "image",
+            src: "/projects/custom-sauna/2.png",
+            alt: "Custom sauna — interior benches and wood paneling",
+          },
+          {
+            type: "image",
+            src: "/projects/custom-sauna/3.png",
+            alt: "Custom sauna — interior with heater and tiered benches",
+          },
+          {
+            type: "image",
+            src: "/projects/custom-sauna/4.png",
+            alt: "Custom sauna — heater with stone surround and heat guard",
+          },
+          {
+            type: "image",
+            src: "/projects/custom-sauna/5.png",
+            alt: "Custom sauna — changing room with bench and accessories",
+          },
+          {
+            type: "video",
+            src: "/projects/custom-sauna/video.mov",
+            alt: "Custom sauna — project walkthrough video",
+            poster: "/projects/custom-sauna/1.png",
           },
         ],
       },
