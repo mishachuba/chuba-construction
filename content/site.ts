@@ -114,8 +114,24 @@ export const siteConfig = {
         media: [
           {
             type: "image",
-            src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
-            alt: "Placeholder — deck construction style reference",
+            src: "/projects/deck-construction/1.png",
+            alt: "Deck construction — covered porch with stairs and railing",
+          },
+          {
+            type: "image",
+            src: "/projects/deck-construction/2.png",
+            alt: "Deck construction — walkway with clear roof and wood railing",
+          },
+          {
+            type: "image",
+            src: "/projects/deck-construction/3.png",
+            alt: "Deck construction — deck, stairs, and covered entry",
+          },
+          {
+            type: "video",
+            src: "/projects/deck-construction/video.mov",
+            alt: "Deck construction — project walkthrough video",
+            poster: "/projects/deck-construction/1.png",
           },
         ],
       },
