@@ -140,8 +140,35 @@ export const siteConfig = {
         media: [
           {
             type: "image",
-            src: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80",
-            alt: "Placeholder — landscaping and concrete style reference",
+            src: "/projects/landscaping-concrete/1.png",
+            alt: "Landscaping and concrete — front yard steps and drought-tolerant garden",
+          },
+          {
+            type: "image",
+            src: "/projects/landscaping-concrete/2.png",
+            alt: "Landscaping and concrete — front yard with river rock and concrete walkway",
+          },
+          {
+            type: "image",
+            src: "/projects/landscaping-concrete/3.png",
+            alt: "Landscaping and concrete — backyard with turf, patio, and stepping stones",
+          },
+          {
+            type: "image",
+            src: "/projects/landscaping-concrete/4.png",
+            alt: "Landscaping and concrete — backyard lawn with concrete borders",
+          },
+          {
+            type: "video",
+            src: "/projects/landscaping-concrete/video-1.mov",
+            alt: "Landscaping and concrete — project walkthrough video",
+            poster: "/projects/landscaping-concrete/1.png",
+          },
+          {
+            type: "video",
+            src: "/projects/landscaping-concrete/video-2.mov",
+            alt: "Landscaping and concrete — additional project video",
+            poster: "/projects/landscaping-concrete/3.png",
           },
         ],
       },
