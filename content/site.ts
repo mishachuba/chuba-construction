@@ -101,6 +101,12 @@ export const siteConfig = {
             src: "/projects/bathroom-remodel/3.png",
             alt: "Bathroom remodel — tub and stone tile shower surround",
           },
+          {
+            type: "video",
+            src: "/projects/bathroom-remodel/video.mov",
+            alt: "Bathroom remodel — project walkthrough video",
+            poster: "/projects/bathroom-remodel/1.png",
+          },
         ],
       },
       {
