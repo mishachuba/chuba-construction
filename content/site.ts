@@ -84,28 +84,48 @@ export const siteConfig = {
     subheading: "Sample project styles",
     items: [
       {
-        title: "Kitchen remodel",
-        image:
-          "https://images.unsplash.com/photo-1556912173-46c336c7fd55?w=800&q=80",
-        alt: "Placeholder — kitchen remodeling style reference",
+        title: "Bathroom remodel",
+        images: [
+          {
+            src: "/projects/bathroom-remodel/1.png",
+            alt: "Bathroom remodel — vanity, toilet, and tub with stone tile",
+          },
+          {
+            src: "/projects/bathroom-remodel/2.png",
+            alt: "Bathroom remodel — wide view of vanity and shower area",
+          },
+          {
+            src: "/projects/bathroom-remodel/3.png",
+            alt: "Bathroom remodel — tub and stone tile shower surround",
+          },
+        ],
       },
       {
         title: "Deck construction",
-        image:
-          "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
-        alt: "Placeholder — deck construction style reference",
+        images: [
+          {
+            src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+            alt: "Placeholder — deck construction style reference",
+          },
+        ],
       },
       {
         title: "Landscaping & concrete",
-        image:
-          "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80",
-        alt: "Placeholder — landscaping and concrete style reference",
+        images: [
+          {
+            src: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80",
+            alt: "Placeholder — landscaping and concrete style reference",
+          },
+        ],
       },
       {
         title: "Home addition",
-        image:
-          "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
-        alt: "Placeholder — home addition style reference",
+        images: [
+          {
+            src: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
+            alt: "Placeholder — home addition style reference",
+          },
+        ],
       },
     ],
   },

@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { siteConfig } from "@/content/site";
+import { ProjectGallery } from "@/components/ProjectGallery";
 import { SectionHeading } from "@/components/ui";
 
 export function Projects() {
@@ -19,17 +19,9 @@ export function Projects() {
           {siteConfig.projects.items.map((project) => (
             <figure
               key={project.title}
-              className="group overflow-hidden rounded-lg border border-warm-200 bg-white shadow-sm"
+              className="overflow-hidden rounded-lg border border-warm-200 bg-white shadow-sm"
             >
-              <div className="relative aspect-[4/3]">
-                <Image
-                  src={project.image}
-                  alt={project.alt}
-                  fill
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
+              <ProjectGallery images={project.images} title={project.title} />
               <figcaption className="px-3 py-2 text-center text-xs font-medium text-warm-700 sm:text-sm">
                 {project.title}
               </figcaption>
