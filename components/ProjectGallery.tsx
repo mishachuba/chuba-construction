@@ -1,23 +1,32 @@
 "use client";
 
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-type GalleryImage = {
-  readonly src: string;
-  readonly alt: string;
-};
+type GalleryMedia =
+  | {
+      readonly type: "image";
+      readonly src: string;
+      readonly alt: string;
+    }
+  | {
+      readonly type: "video";
+      readonly src: string;
+      readonly alt: string;
+      readonly poster?: string;
+    };
 
 type ProjectGalleryProps = {
-  images: readonly GalleryImage[];
+  media: readonly GalleryMedia[];
   title: string;
 };
 
-export function ProjectGallery({ images, title }: ProjectGalleryProps) {
+export function ProjectGallery({ media, title }: ProjectGalleryProps) {
   const [index, setIndex] = useState(0);
   const touchStartX = useRef<number | null>(null);
-  const count = images.length;
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+  const count = media.length;
   const hasMultiple = count > 1;
 
   const goTo = useCallback(
@@ -26,6 +35,13 @@ export function ProjectGallery({ images, title }: ProjectGalleryProps) {
     },
     [count],
   );
+
+  useEffect(() => {
+    videoRefs.current.forEach((video, videoIndex) => {
+      if (!video || videoIndex === index) return;
+      video.pause();
+    });
+  }, [index]);
 
   const handleTouchStart = (event: React.TouchEvent) => {
     touchStartX.current = event.touches[0].clientX;
@@ -61,22 +77,37 @@ export function ProjectGallery({ images, title }: ProjectGalleryProps) {
       onKeyDown={hasMultiple ? handleKeyDown : undefined}
       tabIndex={hasMultiple ? 0 : undefined}
       aria-roledescription={hasMultiple ? "carousel" : undefined}
-      aria-label={hasMultiple ? `${title} photos` : undefined}
+      aria-label={hasMultiple ? `${title} gallery` : undefined}
     >
       <div
         className={`flex h-full ${hasMultiple ? "transition-transform duration-300 ease-out" : ""}`}
         style={hasMultiple ? { transform: `translateX(-${index * 100}%)` } : undefined}
       >
-        {images.map((image, imageIndex) => (
-          <div key={image.src} className="relative h-full w-full shrink-0">
-            <Image
-              src={image.src}
-              alt={image.alt}
-              fill
-              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="object-cover"
-              priority={imageIndex === 0}
-            />
+        {media.map((item, itemIndex) => (
+          <div key={item.src} className="relative h-full w-full shrink-0">
+            {item.type === "video" ? (
+              <video
+                ref={(element) => {
+                  videoRefs.current[itemIndex] = element;
+                }}
+                src={item.src}
+                poster={item.poster}
+                controls
+                playsInline
+                preload="metadata"
+                className="h-full w-full object-cover"
+                aria-label={item.alt}
+              />
+            ) : (
+              <Image
+                src={item.src}
+                alt={item.alt}
+                fill
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                className="object-cover"
+                priority={itemIndex === 0}
+              />
+            )}
           </div>
         ))}
       </div>
@@ -86,8 +117,8 @@ export function ProjectGallery({ images, title }: ProjectGalleryProps) {
           <button
             type="button"
             onClick={() => goTo(index - 1)}
-            className="absolute top-1/2 left-1.5 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-brand-navy shadow-md transition hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-teal sm:left-2 sm:h-10 sm:w-10"
-            aria-label="Previous photo"
+            className="absolute top-1/2 left-1.5 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-brand-navy shadow-md transition hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-teal sm:left-2 sm:h-10 sm:w-10"
+            aria-label="Previous slide"
           >
             <ChevronLeft className="h-5 w-5" aria-hidden="true" />
           </button>
@@ -95,24 +126,28 @@ export function ProjectGallery({ images, title }: ProjectGalleryProps) {
           <button
             type="button"
             onClick={() => goTo(index + 1)}
-            className="absolute top-1/2 right-1.5 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-brand-navy shadow-md transition hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-teal sm:right-2 sm:h-10 sm:w-10"
-            aria-label="Next photo"
+            className="absolute top-1/2 right-1.5 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-brand-navy shadow-md transition hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-teal sm:right-2 sm:h-10 sm:w-10"
+            aria-label="Next slide"
           >
             <ChevronRight className="h-5 w-5" aria-hidden="true" />
           </button>
 
           <div
-            className="absolute right-0 bottom-2 left-0 flex justify-center gap-1.5"
+            className="absolute right-0 bottom-2 left-0 z-10 flex justify-center gap-1.5"
             role="tablist"
-            aria-label="Photo navigation"
+            aria-label="Gallery navigation"
           >
-            {images.map((image, dotIndex) => (
+            {media.map((item, dotIndex) => (
               <button
-                key={image.src}
+                key={item.src}
                 type="button"
                 role="tab"
                 aria-selected={dotIndex === index}
-                aria-label={`Photo ${dotIndex + 1} of ${count}`}
+                aria-label={
+                  item.type === "video"
+                    ? `Video ${dotIndex + 1} of ${count}`
+                    : `Photo ${dotIndex + 1} of ${count}`
+                }
                 onClick={() => goTo(dotIndex)}
                 className={`h-2 w-2 rounded-full transition ${
                   dotIndex === index
@@ -123,7 +158,7 @@ export function ProjectGallery({ images, title }: ProjectGalleryProps) {
             ))}
           </div>
 
-          <span className="absolute top-2 right-2 rounded-full bg-brand-navy/70 px-2 py-0.5 text-xs font-medium text-white">
+          <span className="absolute top-2 right-2 z-10 rounded-full bg-brand-navy/70 px-2 py-0.5 text-xs font-medium text-white">
             {index + 1}/{count}
           </span>
         </>

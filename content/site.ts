@@ -85,16 +85,19 @@ export const siteConfig = {
     items: [
       {
         title: "Bathroom remodel",
-        images: [
+        media: [
           {
+            type: "image",
             src: "/projects/bathroom-remodel/1.png",
             alt: "Bathroom remodel — vanity, toilet, and tub with stone tile",
           },
           {
+            type: "image",
             src: "/projects/bathroom-remodel/2.png",
             alt: "Bathroom remodel — wide view of vanity and shower area",
           },
           {
+            type: "image",
             src: "/projects/bathroom-remodel/3.png",
             alt: "Bathroom remodel — tub and stone tile shower surround",
           },
@@ -102,8 +105,9 @@ export const siteConfig = {
       },
       {
         title: "Deck construction",
-        images: [
+        media: [
           {
+            type: "image",
             src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
             alt: "Placeholder — deck construction style reference",
           },
@@ -111,8 +115,9 @@ export const siteConfig = {
       },
       {
         title: "Landscaping & concrete",
-        images: [
+        media: [
           {
+            type: "image",
             src: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80",
             alt: "Placeholder — landscaping and concrete style reference",
           },
@@ -120,8 +125,9 @@ export const siteConfig = {
       },
       {
         title: "Home addition",
-        images: [
+        media: [
           {
+            type: "image",
             src: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
             alt: "Placeholder — home addition style reference",
           },
