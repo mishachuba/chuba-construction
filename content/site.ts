@@ -158,11 +158,27 @@ export const siteConfig = {
   social: {
     heading: "Find us on your favorite platform",
     links: [
-      { name: "Google Business", href: "#", icon: "google" as const },
-      { name: "Yelp", href: "#", icon: "yelp" as const },
-      { name: "Facebook", href: "#", icon: "facebook" as const },
+      {
+        name: "Google Business",
+        href: "https://share.google/9lLKVJhYjy0rFN8AW",
+        icon: "google" as const,
+      },
+      {
+        name: "Yelp",
+        href: "https://www.yelp.com/biz/chuba-construction-walnut-creek",
+        icon: "yelp" as const,
+      },
+      {
+        name: "Facebook",
+        href: "https://www.facebook.com/chubaconstruction/",
+        icon: "facebook" as const,
+      },
       { name: "Instagram", href: "#", icon: "instagram" as const },
-      { name: "Nextdoor", href: "#", icon: "nextdoor" as const },
+      {
+        name: "Nextdoor",
+        href: "https://nextdoor.com/page/chuba-construction-walnut-creek-ca",
+        icon: "nextdoor" as const,
+      },
     ],
   },
   faq: [

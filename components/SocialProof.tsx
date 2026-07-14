@@ -38,17 +38,38 @@ export function SocialProof() {
           subtitle={siteConfig.social.heading}
         />
         <div className="flex flex-wrap items-center justify-center gap-4">
-          {siteConfig.social.links.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="flex items-center gap-2 rounded-lg border border-warm-200 bg-warm-50 px-5 py-3 text-sm font-medium text-brand-navy transition-colors hover:border-brand-teal hover:bg-brand-teal/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-teal focus-visible:ring-offset-2"
-              aria-label={`${link.name} (link coming soon)`}
-            >
-              <SocialIcon icon={link.icon} />
-              {link.name}
-            </a>
-          ))}
+          {siteConfig.social.links.map((link) => {
+            const isPlaceholder = link.href === "#";
+            const className =
+              "flex items-center gap-2 rounded-lg border border-warm-200 bg-warm-50 px-5 py-3 text-sm font-medium text-brand-navy transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-teal focus-visible:ring-offset-2";
+
+            if (isPlaceholder) {
+              return (
+                <span
+                  key={link.name}
+                  className={`${className} cursor-not-allowed opacity-60`}
+                  aria-label={`${link.name} (link coming soon)`}
+                >
+                  <SocialIcon icon={link.icon} />
+                  {link.name}
+                </span>
+              );
+            }
+
+            return (
+              <a
+                key={link.name}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${className} hover:border-brand-teal hover:bg-brand-teal/10`}
+                aria-label={`${link.name} (opens in new tab)`}
+              >
+                <SocialIcon icon={link.icon} />
+                {link.name}
+              </a>
+            );
+          })}
         </div>
       </div>
     </section>
