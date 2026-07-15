@@ -312,7 +312,7 @@ export const siteConfig = {
     { label: "Home", href: "#home" },
     { label: "Services", href: "#services" },
     { label: "Projects", href: "#projects" },
-    { label: "RO Systems", href: "#ro-systems" },
+    { label: "Home Upgrade Idea", href: "#ro-systems" },
     { label: "About", href: "#about" },
     { label: "Connect With Us", href: "#connect-with-us" },
     { label: "FAQ", href: "#faq" },
