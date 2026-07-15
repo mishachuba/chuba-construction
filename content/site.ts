@@ -255,7 +255,7 @@ export const siteConfig = {
     links: [
       {
         name: "Google Business",
-        href: "https://share.google/9lLKVJhYjy0rFN8AW",
+        href: "https://maps.app.goo.gl/HrHiMezgTLzqJ2a2A",
         icon: "google" as const,
       },
       {
