@@ -22,6 +22,49 @@ type ProjectGalleryProps = {
   title: string;
 };
 
+function GalleryVideo({
+  item,
+  isActive,
+  videoRef,
+}: {
+  item: Extract<GalleryMedia, { type: "video" }>;
+  isActive: boolean;
+  videoRef: (element: HTMLVideoElement | null) => void;
+}) {
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  useEffect(() => {
+    if (!isActive) {
+      setIsPlaying(false);
+    }
+  }, [isActive]);
+
+  return (
+    <div className="relative h-full w-full bg-black">
+      {item.poster && !isPlaying && (
+        <img
+          src={item.poster}
+          alt=""
+          className="pointer-events-none absolute inset-0 z-[1] h-full w-full object-cover"
+          aria-hidden="true"
+        />
+      )}
+      <video
+        ref={videoRef}
+        src={item.src}
+        poster={item.poster}
+        controls
+        playsInline
+        preload={isActive ? "metadata" : "none"}
+        className="relative z-[2] h-full w-full object-cover"
+        aria-label={item.alt}
+        onPlaying={() => setIsPlaying(true)}
+        onEnded={() => setIsPlaying(false)}
+      />
+    </div>
+  );
+}
+
 export function ProjectGallery({ media, title }: ProjectGalleryProps) {
   const [index, setIndex] = useState(0);
   const touchStartX = useRef<number | null>(null);
@@ -86,18 +129,12 @@ export function ProjectGallery({ media, title }: ProjectGalleryProps) {
         {media.map((item, itemIndex) => (
           <div key={item.src} className="relative h-full w-full shrink-0">
             {item.type === "video" ? (
-              <video
-                key={item.src}
-                ref={(element) => {
+              <GalleryVideo
+                item={item}
+                isActive={itemIndex === index}
+                videoRef={(element) => {
                   videoRefs.current[itemIndex] = element;
                 }}
-                src={item.src}
-                poster={item.poster}
-                controls
-                playsInline
-                preload="none"
-                className="h-full w-full object-cover"
-                aria-label={item.alt}
               />
             ) : (
               <Image
