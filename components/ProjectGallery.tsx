@@ -31,52 +31,35 @@ function GalleryVideo({
   isActive: boolean;
   videoRef: (element: HTMLVideoElement | null) => void;
 }) {
-  const localVideoRef = useRef<HTMLVideoElement | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
-    const video = localVideoRef.current;
-    if (!video) return;
-
     if (!isActive) {
-      video.pause();
-      video.currentTime = 0;
-      return;
+      setIsPlaying(false);
     }
-
-    const showFirstFrame = () => {
-      video.pause();
-      if (video.currentTime < 0.001) {
-        video.currentTime = 0.001;
-      }
-    };
-
-    video.addEventListener("loadeddata", showFirstFrame);
-    video.addEventListener("seeked", showFirstFrame);
-
-    if (video.readyState >= 2) {
-      showFirstFrame();
-    }
-
-    return () => {
-      video.removeEventListener("loadeddata", showFirstFrame);
-      video.removeEventListener("seeked", showFirstFrame);
-    };
-  }, [isActive, item.src]);
+  }, [isActive]);
 
   return (
     <div className="relative h-full w-full bg-black">
+      {item.poster && !isPlaying && (
+        <img
+          src={item.poster}
+          alt=""
+          className="pointer-events-none absolute inset-0 z-[1] h-full w-full object-cover"
+          aria-hidden="true"
+        />
+      )}
       <video
-        ref={(element) => {
-          localVideoRef.current = element;
-          videoRef(element);
-        }}
+        ref={videoRef}
         src={item.src}
         poster={item.poster}
         controls
         playsInline
-        preload={isActive ? "auto" : "none"}
-        className="h-full w-full object-cover"
+        preload={isActive ? "metadata" : "none"}
+        className="relative z-[2] h-full w-full object-cover"
         aria-label={item.alt}
+        onPlaying={() => setIsPlaying(true)}
+        onEnded={() => setIsPlaying(false)}
       />
     </div>
   );
