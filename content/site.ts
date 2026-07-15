@@ -23,7 +23,7 @@ export const siteConfig = {
     "Moraga",
     "greater East Bay",
   ],
-  servicesSubtitle: "Serving Walnut Creek & East Bay",
+  servicesSubtitle: "Serving Walnut Creek & Bay Area",
   hero: {
     headline: "Repair, remodel, new build, we can do it all.",
     tagline:
