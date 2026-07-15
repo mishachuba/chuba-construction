@@ -90,16 +90,16 @@ export function ProjectGallery({
   };
 
   const navButtonClass = isLightbox
-    ? "absolute top-1/2 left-2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white/90 bg-transparent text-white transition hover:border-white hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 md:left-4 md:h-12 md:w-12"
-    : "absolute top-1/2 left-1.5 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white/90 bg-transparent text-white transition hover:border-white hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 sm:left-2 sm:h-10 sm:w-10";
+    ? "pointer-events-auto absolute top-1/2 left-2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white/90 bg-brand-navy/30 text-white backdrop-blur-sm transition hover:border-white hover:bg-brand-navy/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 md:left-4 md:h-12 md:w-12"
+    : "pointer-events-auto absolute top-1/2 left-1.5 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white/90 bg-brand-navy/30 text-white backdrop-blur-sm transition hover:border-white hover:bg-brand-navy/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 sm:left-2 sm:h-10 sm:w-10";
 
   const navButtonRightClass = isLightbox
-    ? "absolute top-1/2 right-2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white/90 bg-transparent text-white transition hover:border-white hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 md:right-4 md:h-12 md:w-12"
-    : "absolute top-1/2 right-1.5 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white/90 bg-transparent text-white transition hover:border-white hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 sm:right-2 sm:h-10 sm:w-10";
+    ? "pointer-events-auto absolute top-1/2 right-2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white/90 bg-brand-navy/30 text-white backdrop-blur-sm transition hover:border-white hover:bg-brand-navy/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 md:right-4 md:h-12 md:w-12"
+    : "pointer-events-auto absolute top-1/2 right-1.5 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white/90 bg-brand-navy/30 text-white backdrop-blur-sm transition hover:border-white hover:bg-brand-navy/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 sm:right-2 sm:h-10 sm:w-10";
 
   return (
     <div
-      className={className}
+      className={`isolate ${className}`}
       onTouchStart={hasMultiple ? handleTouchStart : undefined}
       onTouchEnd={hasMultiple ? handleTouchEnd : undefined}
       onKeyDown={hasMultiple ? handleKeyDown : undefined}
@@ -107,42 +107,49 @@ export function ProjectGallery({
       aria-roledescription={hasMultiple ? "carousel" : undefined}
       aria-label={hasMultiple ? `${title} gallery` : undefined}
     >
-      <div
-        className={`flex h-full ${hasMultiple ? "transition-transform duration-300 ease-out" : ""}`}
-        style={hasMultiple ? { transform: `translateX(-${index * 100}%)` } : undefined}
-      >
-        {media.map((item, itemIndex) => (
-          <div key={item.src} className="relative h-full w-full shrink-0">
-            {item.type === "video" ? (
-              <video
-                key={item.src}
-                ref={(element) => {
-                  videoRefs.current[itemIndex] = element;
-                }}
-                src={item.src}
-                poster={item.poster}
-                controls
-                playsInline
-                preload="none"
-                className="h-full w-full object-cover"
-                aria-label={item.alt}
-              />
-            ) : (
-              <Image
-                src={item.src}
-                alt={item.alt}
-                fill
-                sizes={imageSizes}
-                className="object-cover"
-                priority={itemIndex === 0 && variant === "inline"}
-              />
-            )}
-          </div>
-        ))}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <div
+          className={`flex h-full w-full ${hasMultiple ? "transition-transform duration-300 ease-out" : ""}`}
+          style={
+            hasMultiple ? { transform: `translateX(-${index * 100}%)` } : undefined
+          }
+        >
+          {media.map((item, itemIndex) => (
+            <div
+              key={item.src}
+              className="relative z-0 h-full w-full shrink-0 [transform:translateZ(0)]"
+            >
+              {item.type === "video" ? (
+                <video
+                  key={item.src}
+                  ref={(element) => {
+                    videoRefs.current[itemIndex] = element;
+                  }}
+                  src={item.src}
+                  poster={item.poster}
+                  controls
+                  playsInline
+                  preload="none"
+                  className="relative z-0 h-full w-full object-cover"
+                  aria-label={item.alt}
+                />
+              ) : (
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  sizes={imageSizes}
+                  className="relative z-0 object-cover"
+                  priority={itemIndex === 0 && variant === "inline"}
+                />
+              )}
+            </div>
+          ))}
+        </div>
       </div>
 
       {hasMultiple && (
-        <>
+        <div className="pointer-events-none absolute inset-0 z-20 [transform:translateZ(0)]">
           <button
             type="button"
             onClick={(event) => {
@@ -174,7 +181,7 @@ export function ProjectGallery({
           </button>
 
           <div
-            className="absolute right-0 bottom-2 left-0 z-10 flex justify-center gap-1.5"
+            className="pointer-events-auto absolute right-0 bottom-2 left-0 flex justify-center gap-1.5"
             role="tablist"
             aria-label="Gallery navigation"
           >
@@ -193,23 +200,23 @@ export function ProjectGallery({
                   event.stopPropagation();
                   goTo(dotIndex);
                 }}
-                className={`h-2 w-2 rounded-full transition ${
+                className={`h-2.5 w-2.5 rounded-full shadow-sm transition ${
                   dotIndex === index
                     ? "scale-110 bg-white"
-                    : "bg-white/50 hover:bg-white/80"
+                    : "bg-white/70 hover:bg-white"
                 }`}
               />
             ))}
           </div>
 
           <span
-            className={`absolute top-2 z-10 rounded-full bg-brand-navy/70 px-2 py-0.5 text-xs font-medium text-white ${
+            className={`pointer-events-none absolute top-2 rounded-full bg-brand-navy/80 px-2 py-0.5 text-xs font-medium text-white shadow-sm ${
               isLightbox ? "left-2" : "right-2"
             }`}
           >
             {index + 1}/{count}
           </span>
-        </>
+        </div>
       )}
     </div>
   );
