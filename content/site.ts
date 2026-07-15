@@ -319,7 +319,7 @@ export const siteConfig = {
   ],
   seo: {
     title:
-      "Chuba Construction | General Contractor Walnut Creek & East Bay CA",
+      "Chuba Construction | General Contractor Walnut Creek & Bay Area CA",
     description:
       "Licensed, bonded & insured general contractor in Walnut Creek, CA. Kitchen & bathroom remodeling, ADU builder, deck construction, handyman services & RO water filtration across Contra Costa County and the East Bay.",
     keywords: [
