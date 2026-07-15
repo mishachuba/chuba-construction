@@ -1,5 +1,5 @@
 import { siteConfig } from "@/content/site";
-import { ProjectGallery } from "@/components/ProjectGallery";
+import { ProjectGalleryWithLightbox } from "@/components/ProjectGalleryWithLightbox";
 import { SectionHeading } from "@/components/ui";
 
 export function Projects() {
@@ -21,7 +21,10 @@ export function Projects() {
               key={project.title}
               className="overflow-hidden rounded-lg border border-warm-200 bg-white shadow-sm"
             >
-              <ProjectGallery media={project.media} title={project.title} />
+              <ProjectGalleryWithLightbox
+                media={project.media}
+                title={project.title}
+              />
               <figcaption className="px-3 py-2 text-center text-xs font-medium text-warm-700 sm:text-sm">
                 {project.title}
               </figcaption>

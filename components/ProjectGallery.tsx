@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-type GalleryMedia =
+export type GalleryMedia =
   | {
       readonly type: "image";
       readonly src: string;
@@ -20,20 +20,40 @@ type GalleryMedia =
 type ProjectGalleryProps = {
   media: readonly GalleryMedia[];
   title: string;
+  className?: string;
+  imageSizes?: string;
+  index?: number;
+  onIndexChange?: (index: number) => void;
+  variant?: "inline" | "lightbox";
 };
 
-export function ProjectGallery({ media, title }: ProjectGalleryProps) {
-  const [index, setIndex] = useState(0);
+export function ProjectGallery({
+  media,
+  title,
+  className = "relative aspect-[3/4] overflow-hidden bg-warm-200",
+  imageSizes = "(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw",
+  index: controlledIndex,
+  onIndexChange,
+  variant = "inline",
+}: ProjectGalleryProps) {
+  const [internalIndex, setInternalIndex] = useState(0);
+  const index = controlledIndex ?? internalIndex;
   const touchStartX = useRef<number | null>(null);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const count = media.length;
   const hasMultiple = count > 1;
+  const isLightbox = variant === "lightbox";
 
   const goTo = useCallback(
     (nextIndex: number) => {
-      setIndex((nextIndex + count) % count);
+      const next = (nextIndex + count) % count;
+      if (onIndexChange) {
+        onIndexChange(next);
+      } else {
+        setInternalIndex(next);
+      }
     },
-    [count],
+    [count, onIndexChange],
   );
 
   useEffect(() => {
@@ -69,9 +89,17 @@ export function ProjectGallery({ media, title }: ProjectGalleryProps) {
     }
   };
 
+  const navButtonClass = isLightbox
+    ? "absolute top-1/2 left-2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white/90 bg-transparent text-white transition hover:border-white hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 md:left-4 md:h-12 md:w-12"
+    : "absolute top-1/2 left-1.5 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white/90 bg-transparent text-white transition hover:border-white hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 sm:left-2 sm:h-10 sm:w-10";
+
+  const navButtonRightClass = isLightbox
+    ? "absolute top-1/2 right-2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white/90 bg-transparent text-white transition hover:border-white hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 md:right-4 md:h-12 md:w-12"
+    : "absolute top-1/2 right-1.5 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white/90 bg-transparent text-white transition hover:border-white hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 sm:right-2 sm:h-10 sm:w-10";
+
   return (
     <div
-      className="relative aspect-[3/4] overflow-hidden bg-warm-200"
+      className={className}
       onTouchStart={hasMultiple ? handleTouchStart : undefined}
       onTouchEnd={hasMultiple ? handleTouchEnd : undefined}
       onKeyDown={hasMultiple ? handleKeyDown : undefined}
@@ -104,9 +132,9 @@ export function ProjectGallery({ media, title }: ProjectGalleryProps) {
                 src={item.src}
                 alt={item.alt}
                 fill
-                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                sizes={imageSizes}
                 className="object-cover"
-                priority={itemIndex === 0}
+                priority={itemIndex === 0 && variant === "inline"}
               />
             )}
           </div>
@@ -117,24 +145,30 @@ export function ProjectGallery({ media, title }: ProjectGalleryProps) {
         <>
           <button
             type="button"
-            onClick={() => goTo(index - 1)}
-            className="absolute top-1/2 left-1.5 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white/90 bg-transparent text-white transition hover:border-white hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 sm:left-2 sm:h-10 sm:w-10"
+            onClick={(event) => {
+              event.stopPropagation();
+              goTo(index - 1);
+            }}
+            className={navButtonClass}
             aria-label="Previous slide"
           >
             <ChevronLeft
-              className="h-5 w-5 drop-shadow-md"
+              className={`drop-shadow-md ${isLightbox ? "h-6 w-6" : "h-5 w-5"}`}
               aria-hidden="true"
             />
           </button>
 
           <button
             type="button"
-            onClick={() => goTo(index + 1)}
-            className="absolute top-1/2 right-1.5 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white/90 bg-transparent text-white transition hover:border-white hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 sm:right-2 sm:h-10 sm:w-10"
+            onClick={(event) => {
+              event.stopPropagation();
+              goTo(index + 1);
+            }}
+            className={navButtonRightClass}
             aria-label="Next slide"
           >
             <ChevronRight
-              className="h-5 w-5 drop-shadow-md"
+              className={`drop-shadow-md ${isLightbox ? "h-6 w-6" : "h-5 w-5"}`}
               aria-hidden="true"
             />
           </button>
@@ -155,7 +189,10 @@ export function ProjectGallery({ media, title }: ProjectGalleryProps) {
                     ? `Video ${dotIndex + 1} of ${count}`
                     : `Photo ${dotIndex + 1} of ${count}`
                 }
-                onClick={() => goTo(dotIndex)}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  goTo(dotIndex);
+                }}
                 className={`h-2 w-2 rounded-full transition ${
                   dotIndex === index
                     ? "scale-110 bg-white"
@@ -165,7 +202,11 @@ export function ProjectGallery({ media, title }: ProjectGalleryProps) {
             ))}
           </div>
 
-          <span className="absolute top-2 right-2 z-10 rounded-full bg-brand-navy/70 px-2 py-0.5 text-xs font-medium text-white">
+          <span
+            className={`absolute top-2 z-10 rounded-full bg-brand-navy/70 px-2 py-0.5 text-xs font-medium text-white ${
+              isLightbox ? "left-2" : "right-2"
+            }`}
+          >
             {index + 1}/{count}
           </span>
         </>
