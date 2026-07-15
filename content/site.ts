@@ -205,7 +205,7 @@ export const siteConfig = {
     ],
   },
   reverseOsmosis: {
-    heading: "Home Improvement Idea",
+    heading: "Home Upgrade Idea",
     subheading:
       "Install reverse osmosis water filter",
     benefits: [
