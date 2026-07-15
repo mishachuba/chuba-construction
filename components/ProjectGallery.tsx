@@ -117,19 +117,25 @@ export function ProjectGallery({ media, title }: ProjectGalleryProps) {
           <button
             type="button"
             onClick={() => goTo(index - 1)}
-            className="absolute top-1/2 left-1.5 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-brand-navy shadow-md transition hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-teal sm:left-2 sm:h-10 sm:w-10"
+            className="absolute top-1/2 left-1.5 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white/90 bg-transparent text-white transition hover:border-white hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 sm:left-2 sm:h-10 sm:w-10"
             aria-label="Previous slide"
           >
-            <ChevronLeft className="h-5 w-5" aria-hidden="true" />
+            <ChevronLeft
+              className="h-5 w-5 drop-shadow-md"
+              aria-hidden="true"
+            />
           </button>
 
           <button
             type="button"
             onClick={() => goTo(index + 1)}
-            className="absolute top-1/2 right-1.5 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-brand-navy shadow-md transition hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-teal sm:right-2 sm:h-10 sm:w-10"
+            className="absolute top-1/2 right-1.5 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white/90 bg-transparent text-white transition hover:border-white hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 sm:right-2 sm:h-10 sm:w-10"
             aria-label="Next slide"
           >
-            <ChevronRight className="h-5 w-5" aria-hidden="true" />
+            <ChevronRight
+              className="h-5 w-5 drop-shadow-md"
+              aria-hidden="true"
+            />
           </button>
 
           <div
