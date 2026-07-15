@@ -28,6 +28,7 @@ function SocialIcon({ icon }: { icon: string }) {
 export function SocialProof() {
   return (
     <section
+      id="connect-with-us"
       className="bg-white py-16 sm:py-20"
       aria-labelledby="social-heading"
     >
