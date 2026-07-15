@@ -87,6 +87,7 @@ export function ProjectGallery({ media, title }: ProjectGalleryProps) {
           <div key={item.src} className="relative h-full w-full shrink-0">
             {item.type === "video" ? (
               <video
+                key={item.src}
                 ref={(element) => {
                   videoRefs.current[itemIndex] = element;
                 }}
@@ -94,7 +95,7 @@ export function ProjectGallery({ media, title }: ProjectGalleryProps) {
                 poster={item.poster}
                 controls
                 playsInline
-                preload="metadata"
+                preload="none"
                 className="h-full w-full object-cover"
                 aria-label={item.alt}
               />

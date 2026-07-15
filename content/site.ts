@@ -160,9 +160,9 @@ export const siteConfig = {
           },
           {
             type: "video",
-            src: "/projects/landscaping-concrete/video-2.mov",
+            src: "/projects/landscaping-concrete/video.mov",
             alt: "Landscaping and concrete — project walkthrough video",
-            poster: "/projects/landscaping-concrete/3.png",
+            poster: "/projects/landscaping-concrete/video-poster.png",
           },
         ],
       },
