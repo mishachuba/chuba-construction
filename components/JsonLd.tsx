@@ -24,7 +24,7 @@ export function JsonLd() {
       credentialCategory: "license",
       name: `California Contractor License #${siteConfig.licenseNumber}`,
     },
-    sameAs: siteConfig.social.links.map((link) => link.href).filter((href) => href !== "#"),
+    sameAs: siteConfig.social.links.map((link) => link.href),
     knowsAbout: [
       "Home remodeling",
       "Kitchen remodeling",
