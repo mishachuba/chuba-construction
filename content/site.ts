@@ -268,7 +268,11 @@ export const siteConfig = {
         href: "https://www.facebook.com/chubaconstruction/",
         icon: "facebook" as const,
       },
-      { name: "Instagram", href: "#", icon: "instagram" as const },
+      {
+        name: "Instagram",
+        href: "https://www.instagram.com/chubaconstruction/",
+        icon: "instagram" as const,
+      },
       {
         name: "Nextdoor",
         href: "https://nextdoor.com/page/chuba-construction-walnut-creek-ca",
