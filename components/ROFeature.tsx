@@ -33,7 +33,7 @@ export function ROFeature() {
 
             <h3 className="mb-4 flex items-center gap-2 text-xl font-bold text-brand-navy">
               <Droplets className="h-5 w-5 text-brand-teal-dark" aria-hidden="true" />
-              Why Reverse Osmosis?
+              Why Reverse Osmosis (RO)?
             </h3>
             <ul className="space-y-2">
               {ro.benefits.map((benefit) => (
