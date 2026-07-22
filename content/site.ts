@@ -242,10 +242,6 @@ export const siteConfig = {
           label: "Countertop hole drilling (if required)",
           price: "+$150",
         },
-        {
-          label: "Electrical outlet upgrade (if required)",
-          price: "+$150",
-        },
       ],
       note: "Pricing covers professional installation. System purchase is separate — we can help you choose the right unit.",
     },
@@ -304,7 +300,7 @@ export const siteConfig = {
     {
       question: "What is included in the RO installation special?",
       answer:
-        "Our East Bay RO Installation Special covers professional undersink installation for $300. If countertop drilling is required, add $150. If an electrical outlet upgrade is needed, add $150. The RO system itself is purchased separately.",
+        "Our East Bay RO Installation Special covers professional undersink installation for $300. If countertop drilling is required, add $150. The RO system itself is purchased separately.",
     },
     {
       question: "How soon can you start my project?",
