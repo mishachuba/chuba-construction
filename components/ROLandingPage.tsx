@@ -4,7 +4,6 @@ import {
   CheckCircle,
   Droplets,
   MapPin,
-  Phone,
   Shield,
   Wrench,
 } from "lucide-react";
@@ -292,28 +291,6 @@ export function ROLandingPage() {
               </details>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Sticky CTA bar — desktop only (mobile uses site bottom bar) */}
-      <section
-        className="hidden border-t border-warm-200 bg-brand-navy py-4 md:block"
-        aria-label="Quick contact"
-      >
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-          <p className="text-white">
-            <span className="font-bold">{promo.price}</span> East Bay RO install
-            special · {siteConfig.licenseDisplay}
-          </p>
-          <CallLink
-            variant="primary"
-            className="shrink-0"
-            showIcon
-            ariaLabel={`Call ${siteConfig.phoneDisplay} for RO installation`}
-          >
-            <Phone className="mr-1.5 h-4 w-4" aria-hidden="true" />
-            {siteConfig.phoneDisplay}
-          </CallLink>
         </div>
       </section>
 
