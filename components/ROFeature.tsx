@@ -22,13 +22,13 @@ export function ROFeature() {
 
         <div className="grid items-start gap-10 lg:grid-cols-2">
           <div>
-            <div className="relative mb-8 aspect-[4/3] overflow-hidden rounded-xl">
+            <div className="relative mb-8 aspect-[1024/863] overflow-hidden rounded-xl bg-white">
               <Image
                 src={ro.image}
                 alt={ro.imageAlt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
+                className="object-contain"
               />
             </div>
 

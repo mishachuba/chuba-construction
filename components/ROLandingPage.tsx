@@ -58,14 +58,14 @@ export function ROLandingPage() {
             </p>
           </div>
 
-          <div className="relative aspect-[4/3] overflow-hidden rounded-xl shadow-2xl">
+          <div className="relative aspect-[1024/863] overflow-hidden rounded-xl bg-white shadow-2xl">
             <Image
               src={hero.image}
               alt={hero.imageAlt}
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
+              className="object-contain"
             />
           </div>
         </div>
