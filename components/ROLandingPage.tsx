@@ -54,7 +54,7 @@ export function ROLandingPage() {
 
             <p className="mt-6 flex items-center gap-2 text-sm text-warm-200">
               <Shield className="h-4 w-4 shrink-0" aria-hidden="true" />
-              {siteConfig.licenseDisplay} · Bonded · Insured
+              {siteConfig.licenseDisplay}
             </p>
           </div>
 
