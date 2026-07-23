@@ -205,6 +205,7 @@ export const siteConfig = {
     ],
   },
   reverseOsmosis: {
+    landingPath: "/reverse-osmosis",
     heading: "Home Upgrade Idea",
     subheading:
       "Install reverse osmosis water filter",

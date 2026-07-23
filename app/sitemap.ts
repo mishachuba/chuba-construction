@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/content/site";
+import { roLandingConfig } from "@/content/ro-landing";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -8,6 +9,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
+    },
+    {
+      url: roLandingConfig.url,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
     },
     {
       url: `${siteConfig.url}/privacy`,

@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { Droplets, CheckCircle } from "lucide-react";
 import { siteConfig } from "@/content/site";
-import { SectionHeading } from "@/components/ui";
+import { roLandingConfig } from "@/content/ro-landing";
+import { SectionHeading, Button } from "@/components/ui";
 
 export function ROFeature() {
   const ro = siteConfig.reverseOsmosis;
@@ -91,6 +92,11 @@ export function ROFeature() {
                 ))}
               </ul>
               <p className="mt-4 text-sm text-warm-700">{ro.pricing.note}</p>
+              <div className="mt-6">
+                <Button href={roLandingConfig.path} variant="primary" className="w-full sm:w-auto">
+                  View RO Install Special →
+                </Button>
+              </div>
             </div>
           </div>
         </div>
