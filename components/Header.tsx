@@ -3,12 +3,17 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { siteConfig } from "@/content/site";
+import { roLandingConfig } from "@/content/ro-landing";
 import { Button } from "@/components/ui";
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const quoteHref =
+    pathname === roLandingConfig.path ? "#ro-quote" : "#contact";
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -55,14 +60,14 @@ export function Header() {
         <div className="flex items-center gap-2 sm:gap-3">
           {/* Desktop: Quote only */}
           <div className="hidden md:flex">
-            <Button href="#contact" variant="primary">
+            <Button href={quoteHref} variant="primary">
               Free Quote
             </Button>
           </div>
 
           {/* Mobile: Quote only (Call/Text in bottom bar) */}
           <div className="md:hidden">
-            <Button href="#contact" variant="primary" className="px-3 py-2">
+            <Button href={quoteHref} variant="primary" className="px-3 py-2">
               Free Quote
             </Button>
           </div>
