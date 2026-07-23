@@ -229,14 +229,14 @@ export const siteConfig = {
       {
         title: "Alkaline vs. Non-Alkaline",
         description:
-          "Standard RO produces neutral-pH water. Alkaline remineralization filters add minerals back for a smoother taste — ask us which option fits your household.",
+          "Standard reverse osmosis produces neutral-pH water. Alkaline remineralization filters add minerals back for a smoother taste — ask us which option fits your household.",
       },
     ],
     image: "/ro-filter-system.png",
     imageAlt:
       "Tankless reverse osmosis water filtration system with dedicated faucet",
     pricing: {
-      heading: "East Bay RO Installation Special",
+      heading: "East Bay Reverse Osmosis Installation Special",
       items: [
         { label: "Professional undersink install, including drain and faucet", price: "$300" },
         {
@@ -299,9 +299,9 @@ export const siteConfig = {
         "Yes. We take on projects of all sizes — from single repairs and handyman tasks to full kitchen and bathroom remodels, additions, and new builds.",
     },
     {
-      question: "What is included in the RO installation special?",
+      question: "What is included in the reverse osmosis installation special?",
       answer:
-        "Our East Bay RO Installation Special covers professional undersink installation for $300. If countertop drilling is required, add $150. The RO system itself is purchased separately.",
+        "Our East Bay Reverse Osmosis Installation Special covers professional undersink installation for $300. If countertop drilling is required, add $150. The reverse osmosis system itself is purchased separately.",
     },
     {
       question: "How soon can you start my project?",
@@ -323,7 +323,7 @@ export const siteConfig = {
     title:
       "Chuba Construction | General Contractor Walnut Creek & Bay Area CA",
     description:
-      "Licensed, bonded & insured general contractor in Walnut Creek, CA. Kitchen & bathroom remodeling, ADU builder, deck construction, handyman services & RO water filtration across Contra Costa County and the East Bay.",
+      "Licensed, bonded & insured general contractor in Walnut Creek, CA. Kitchen & bathroom remodeling, ADU builder, deck construction, handyman services & reverse osmosis water filtration across Contra Costa County and the East Bay.",
     keywords: [
       "General Contractor Walnut Creek",
       "Handyman East Bay CA",

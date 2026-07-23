@@ -145,7 +145,7 @@ export function ROLandingPage() {
             id="ro-benefits-heading"
             className="mb-10 text-center text-3xl font-bold text-brand-navy sm:text-4xl"
           >
-            Why East Bay homeowners choose RO
+            Why East Bay homeowners choose reverse osmosis
           </h2>
           <ul className="mx-auto grid max-w-4xl gap-4 sm:grid-cols-2">
             {ro.benefits.map((benefit) => (
@@ -274,7 +274,7 @@ export function ROLandingPage() {
             id="ro-faq-heading"
             className="mb-10 text-center text-3xl font-bold text-brand-navy sm:text-4xl"
           >
-            RO installation FAQ
+            Reverse osmosis installation FAQ
           </h2>
           <div className="space-y-3">
             {faq.map((item) => (

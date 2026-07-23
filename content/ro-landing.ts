@@ -10,15 +10,15 @@ export const roLandingConfig = {
       "Professional reverse osmosis water filter installation in Walnut Creek & the East Bay. Licensed GC #993336. $300 undersink install special — drain, faucet & setup. Call 925-322-1106.",
     keywords: [
       "Reverse osmosis installation East Bay",
-      "RO water filter Walnut Creek",
-      "Undersink RO installer Contra Costa County",
+      "Reverse osmosis water filter Walnut Creek",
+      "Undersink reverse osmosis installer Contra Costa County",
       "Water filtration installation Lafayette",
-      "RO system install Danville",
-      "Chuba Construction RO",
+      "Reverse osmosis system install Danville",
+      "Chuba Construction reverse osmosis",
     ],
   },
   hero: {
-    badge: "East Bay RO Installation Special",
+    badge: "East Bay Reverse Osmosis Installation Special",
     headline: "Clean, great-tasting water at your kitchen sink",
     subheadline:
       "Professional undersink reverse osmosis installation for East Bay homeowners — $300 flat. Licensed, bonded & insured general contractor.",
@@ -27,7 +27,7 @@ export const roLandingConfig = {
   },
   promo: {
     price: "$300",
-    label: "Undersink RO install special",
+    label: "Undersink reverse osmosis install special",
     includes: [
       "Undersink unit mounting & secure placement",
       "Drain line connection",
@@ -39,14 +39,14 @@ export const roLandingConfig = {
       price: "+$150",
     },
     disclaimer:
-      "Pricing covers professional installation only. The RO system is purchased separately — we help you choose the right unit for your home.",
+      "Pricing covers professional installation only. The reverse osmosis system is purchased separately — we help you choose the right unit for your home.",
   },
   steps: [
     {
       step: "1",
       title: "Call or request a quote",
       description:
-        "Tell us your city, sink setup, and whether you already have an RO unit or need help choosing one.",
+        "Tell us your city, sink setup, and whether you already have a reverse osmosis unit or need help choosing one.",
     },
     {
       step: "2",
@@ -69,23 +69,23 @@ export const roLandingConfig = {
   ],
   faq: [
     {
-      question: "What does the $300 RO installation special include?",
+      question: "What does the $300 reverse osmosis installation special include?",
       answer:
-        "It covers professional undersink installation: mounting the RO unit, connecting the drain line, installing a dedicated filtered-water faucet, and testing the system. The RO unit itself is purchased separately.",
+        "It covers professional undersink installation: mounting the reverse osmosis unit, connecting the drain line, installing a dedicated filtered-water faucet, and testing the system. The reverse osmosis unit itself is purchased separately.",
     },
     {
-      question: "Do I need to buy the RO system before you install?",
+      question: "Do I need to buy the reverse osmosis system before you install?",
       answer:
         "Yes — you purchase the system (or we can advise on models before you buy). Popular options include undersink tankless systems like the Waterdrop G3P600 or countertop units like the AquaTru Classic.",
     },
     {
       question: "What areas do you serve?",
-      answer: `We install RO systems in ${siteConfig.serviceAreas.join(", ")}, and surrounding East Bay communities in Contra Costa County.`,
+      answer: `We install reverse osmosis systems in ${siteConfig.serviceAreas.join(", ")}, and surrounding East Bay communities in Contra Costa County.`,
     },
     {
       question: "How long does installation take?",
       answer:
-        "Most undersink RO installs take about 45–90 minutes, depending on your cabinet layout and whether countertop drilling is needed.",
+        "Most undersink reverse osmosis installs take about 45–90 minutes, depending on your cabinet layout and whether countertop drilling is needed.",
     },
     {
       question: "When is countertop drilling needed?",
@@ -98,12 +98,12 @@ export const roLandingConfig = {
     },
   ],
   contact: {
-    heading: "Get Your RO Install Quote",
+    heading: "Get Your Reverse Osmosis Install Quote",
     subtitle:
       "Tell us your city and sink setup — we'll confirm pricing and schedule your East Bay installation.",
     defaultMessage:
-      "I'm interested in the East Bay RO Installation Special ($300). Please contact me with availability.",
-    subjectPrefix: "RO Install Inquiry",
+      "I'm interested in the East Bay Reverse Osmosis Installation Special ($300). Please contact me with availability.",
+    subjectPrefix: "Reverse Osmosis Install Inquiry",
   },
   campaignUtm: {
     facebook: "?utm_source=facebook&utm_medium=paid&utm_campaign=ro-east-bay-2026",

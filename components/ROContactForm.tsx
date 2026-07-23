@@ -146,7 +146,7 @@ export function ROContactForm() {
                 {roLandingConfig.promo.price}
               </p>
               <p className="mt-2 text-sm text-warm-700">
-                Undersink RO install · {siteConfig.licenseDisplay}
+                Undersink reverse osmosis install · {siteConfig.licenseDisplay}
               </p>
             </div>
 
@@ -206,7 +206,7 @@ export function ROContactForm() {
                     Quote request sent!
                   </p>
                   <p className="mt-1 text-green-700">
-                    We&apos;ll contact you shortly to confirm your RO install
+                    We&apos;ll contact you shortly to confirm your reverse osmosis install
                     details and schedule.
                   </p>
                   <button
@@ -383,7 +383,7 @@ export function ROContactForm() {
                       Sending…
                     </>
                   ) : (
-                    "Request RO Install Quote"
+                    "Request Reverse Osmosis Install Quote"
                   )}
                 </button>
               </form>

@@ -34,7 +34,7 @@ export function ROFeature() {
 
             <h3 className="mb-4 flex items-center gap-2 text-xl font-bold text-brand-navy">
               <Droplets className="h-5 w-5 text-brand-teal-dark" aria-hidden="true" />
-              Why Reverse Osmosis (RO)?
+              Why Reverse Osmosis?
             </h3>
             <ul className="space-y-2">
               {ro.benefits.map((benefit) => (
@@ -94,7 +94,7 @@ export function ROFeature() {
               <p className="mt-4 text-sm text-warm-700">{ro.pricing.note}</p>
               <div className="mt-6">
                 <Button href={roLandingConfig.path} variant="primary" className="w-full sm:w-auto">
-                  View RO Install Special →
+                  View Reverse Osmosis Install Special →
                 </Button>
               </div>
             </div>
