@@ -12,8 +12,8 @@ import { Button } from "@/components/ui";
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
-  const quoteHref =
-    pathname === roLandingConfig.path ? "#ro-quote" : "#contact";
+  const isRoLandingPage = pathname === roLandingConfig.path;
+  const quoteHref = isRoLandingPage ? "#ro-quote" : "#contact";
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -21,6 +21,10 @@ export function Header() {
   };
 
   const closeMenu = () => setMenuOpen(false);
+
+  useEffect(() => {
+    if (isRoLandingPage) setMenuOpen(false);
+  }, [isRoLandingPage]);
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -72,26 +76,28 @@ export function Header() {
             </Button>
           </div>
 
-          {/* Hamburger — mobile and desktop */}
-          <button
-            type="button"
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="rounded-lg p-2 text-brand-navy hover:bg-warm-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-teal focus-visible:ring-offset-2"
-            aria-expanded={menuOpen}
-            aria-controls="site-nav-menu"
-            aria-label={menuOpen ? "Close menu" : "Open menu"}
-          >
-            {menuOpen ? (
-              <X className="h-6 w-6" aria-hidden="true" />
-            ) : (
-              <Menu className="h-6 w-6" aria-hidden="true" />
-            )}
-          </button>
+          {/* Hamburger — hidden on reverse osmosis landing page */}
+          {!isRoLandingPage && (
+            <button
+              type="button"
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="rounded-lg p-2 text-brand-navy hover:bg-warm-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-teal focus-visible:ring-offset-2"
+              aria-expanded={menuOpen}
+              aria-controls="site-nav-menu"
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
+            >
+              {menuOpen ? (
+                <X className="h-6 w-6" aria-hidden="true" />
+              ) : (
+                <Menu className="h-6 w-6" aria-hidden="true" />
+              )}
+            </button>
+          )}
         </div>
       </div>
 
       {/* Backdrop */}
-      {menuOpen && (
+      {!isRoLandingPage && menuOpen && (
         <button
           type="button"
           className="fixed inset-0 z-40 bg-brand-navy/40"
@@ -101,6 +107,7 @@ export function Header() {
       )}
 
       {/* Slide-out panel from the right */}
+      {!isRoLandingPage && (
       <nav
         id="site-nav-menu"
         aria-label="Site navigation"
@@ -137,6 +144,7 @@ export function Header() {
           ))}
         </ul>
       </nav>
+      )}
     </header>
   );
 }
