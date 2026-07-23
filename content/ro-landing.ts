@@ -90,7 +90,7 @@ export const roLandingConfig = {
     {
       question: "When is countertop drilling needed?",
       answer:
-        "If you choose a countertop RO unit that requires a dedicated hole in your counter or if your sink deck needs a new faucet opening, we can drill for an additional $150.",
+        "If the faucet has to go through the countertop, we can drill for an additional $150.",
     },
     {
       question: "Are you licensed for this work?",
